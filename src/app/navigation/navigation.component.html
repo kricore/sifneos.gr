@@ -1,0 +1,69 @@
+<header id="nav"
+  #stickyMenu
+  class="header header-1 black-header"
+  [class.affix]="sticky"
+  [class.affix-top]="!sticky"
+  >
+  <div class="header-wrapper">
+
+
+  <!-- MAIN MENU CONTAINER -->
+  <div class="main-menu-container">
+
+    <div class="container-m-30 clearfix">
+
+      <!-- MAIN MENU -->
+      <div id="main-menu">
+        <div class="navbar navbar-default" role="navigation">
+
+          <!-- MAIN MENU LIST -->
+          <nav class="right-1024">
+            <button type="button"
+              #navButton
+              (click)="toggleMenu($event)"
+              class="navbar-toggle btn-navbar collapsed">
+              <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
+            </button>
+
+            <ul class="nav navbar-nav" #menu
+              [class.collapsed]="collapsed"
+            >
+
+              <!-- MENU ITEM -->
+              <li>
+                <a routerLink="/" routerLinkActive="current">
+                  <div class="main-menu-title">HOME</div>
+                </a>
+              </li>
+              <li routerLink="/bio" routerLinkActive="current">
+                <a routerLink="/bio" routerLinkActive="current">
+                  <div class="main-menu-title">CV</div>
+                </a>
+              </li>
+              <li routerLink="/recordings" routerLinkActive="current">
+                <a routerLink="/recordings" routerLinkActive="current">
+                  <div class="main-menu-title">RECORDINGS</div>
+                </a>
+              </li>
+              <li>
+                <a (click)="scrollToElement('contact')">
+                  <div class="main-menu-title">ΕΠΙΚΟΙΝΩΝΙΑ</div>
+                </a>
+              </li>
+            </ul>
+
+          </nav>
+
+        </div>
+      </div>
+      <!-- END main-menu -->
+
+    </div>
+    <!-- END container-m-30 -->
+
+  </div>
+  <!-- END main-menu-container -->
+  </div>
+  <!-- END header-wrapper -->
+
+</header>

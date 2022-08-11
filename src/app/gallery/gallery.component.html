@@ -1,0 +1,24 @@
+<div id="portfolio-link" class="page-section pt-60">
+
+  <div class="relative gray-bg">
+    <div class="container">
+      <div class="mb-20 mt-20">
+        <h2 class="section-title-2 text-center pl-0 pr-0">MEDIA <span class="bold">GALLERY</span></h2>
+      </div>
+    </div>
+  </div>
+  <div class="relative">
+
+    <!-- ITEMS GRID -->
+    <ul class="port-grid port-grid-wrap display-hover-on-mobile clearfix masonry" id="items-grid">
+      <!-- Item 1 -->
+      <li *ngFor="let image of images"  role="button" class="port-item mix">
+          <div class="port-img-overlay" (click)="loadPopup(image)">
+            <img class="port-main-img" src="{{image['url']}}" alt="{{image['alt']}}">
+          </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+<ng-template appPopup></ng-template>

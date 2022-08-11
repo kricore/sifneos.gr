@@ -1,0 +1,25 @@
+#main-menu .navbar .nav  {
+  padding-top:10px;
+  margin-top: -300px;
+  transition: 300ms all ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #535961;
+
+  &.collapsed {
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 767px){
+    margin-top: 0px;
+    position: static;
+    background: transparent;
+  }
+}
+
+.navbar-default .navbar-toggle{
+  position: relative;
+  z-index: 999;
+}

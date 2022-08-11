@@ -1,0 +1,73 @@
+<div class="page-section pb-80" id="contact">
+  <div class="relative gray-bg">
+    <div class="container">
+      <div class="mb-20 pt-20">
+        <h2 class="section-title-2 text-center pl-0 pr-0"><span class="bold">ΕΠΙΚΟΙΝΩΝΙΑ</span></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pt-100">
+    <div class="row">
+      <div class="col-md-12">
+
+        <form [formGroup]="form" (submit)="onSendRequest()">
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-12 mb-35">
+                  <input
+                    class="col-xs-12"
+                    type="text"
+                    matInput
+                    formControlName="name"
+                    placeholder="Your Name"
+                  />
+                  <span class="error" *ngIf="(form.get('name').value && form.get('name')?.invalid)">Ελάχιστοι χαρακτήρες: 3</span>
+                </div>
+
+                <div class="col-md-12 mb-23">
+                  <input
+                    class="col-xs-12"
+                    type="email"
+                    formControlName="email"
+                    placeholder="Your Email"
+                  />
+                <span class="error" *ngIf="(form.get('email').value && form.get('email')?.invalid)">Βάλτε ένα έγγυρο email</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+                <textarea
+                  class="col-xs-12"
+                  type="message"
+                  formControlName="message"
+                  placeholder="Μήνυμα"
+                  rows="4"
+                ></textarea>
+                <span class="error" *ngIf="(form.get('message').value && form.get('message')?.invalid)">Ελάχιστοι χαρακτήρες: 10</span>
+
+                <div
+                  [ngClass]="form.invalid ? 'disabled text-right text-center-xx' : 'text-right text-center-xx'">
+                  <button
+                     [ngClass]="form.invalid ? 'disabled opacity button medium gray mt-40' : 'button medium gray mt-40'"
+                     (click)="onSendRequest()">Αποστολή </button>
+                </div>
+              </div>
+
+            <div *ngIf="(this.success)" class="col-xs-12 mt-50 alert alert-success" id="contactSuccess">
+              <strong>Επιτυχία!</strong> Το μήνυμά σας έχει αποσταλεί.
+            </div>
+
+            <div *ngIf="(this.hasError)" style="overflow: hidden;" class="col-xs-12 mt-50 alert alert-danger" id="contactError">
+              <strong>Σφάλμα!</strong> Κάτι πήγε λάθος.
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

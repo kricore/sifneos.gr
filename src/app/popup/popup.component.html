@@ -1,0 +1,15 @@
+<div class="popup" appPopup>
+  <div class="mfp-wrap mfp-gallery mfp-close-btn-in mfp-auto-cursor mfp-3d-unfold mfp-ready">
+    <div class="mfp-container mfp-s-ready mfp-image-holder">
+      <div class="mfp-content">
+        <img [src]="image" [alt]="alt" />
+      </div>
+
+      <div class="mfp-buttons">
+        <button type="button" class="button white" (click)="next.next()">Next</button>
+        <button type="button" class="button white" (click)="previous.next()">Previous</button>
+        <button type="button" class="button gray" (click)="close.next()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

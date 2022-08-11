@@ -1,0 +1,46 @@
+.mfp-wrap {
+  height: 100vh;
+  background: rgba(0,0,0,.75);
+  animation: fadeIn 500ms;
+
+  .mfp-content {
+    height: 85vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-height: 100%;
+      width: auto;
+    }
+  }
+
+  .mfp-buttons {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin: 0 10px;
+      padding: 0 15px;
+      font-weight: 700;
+      border-radius: 3px;
+    }
+  }
+}
+.mfp-container {
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
