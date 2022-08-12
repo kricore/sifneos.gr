@@ -1193,8 +1193,11 @@ support for no js
   padding:25px 25px 27px 25px;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 	font-weight:300;
-	font-size:30px;
-	line-height:30px;
+  font-size:22px;
+  @media screen and (min-width: 767px){
+	  font-size:30px;
+  }
+	line-height:1;
 	color:#4b4e53;
 }
 .section-title-3 {

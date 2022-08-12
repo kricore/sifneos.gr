@@ -9,8 +9,11 @@
   </div>
   <div class="relative">
 
+    <div *ngIf="(this.isLoading)" class="text-center mb-20 mt-20 col-xs-12">
+      <app-loader></app-loader>
+    </div>
     <!-- ITEMS GRID -->
-    <ul class="port-grid port-grid-wrap display-hover-on-mobile clearfix masonry" id="items-grid">
+    <ul *ngIf="(!this.isLoading)" class="port-grid port-grid-wrap display-hover-on-mobile clearfix masonry" id="items-grid">
       <!-- Item 1 -->
       <li *ngFor="let image of images"  role="button" class="port-item mix">
           <div class="port-img-overlay" (click)="loadPopup(image)">

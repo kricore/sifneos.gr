@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class QuoteComponent implements OnInit, OnDestroy {
 
   constructor(public apiSrv : ApiService) { }
-  public isLoading : boolean = false;
+  public isLoading : boolean = true;
   protected title : string = '';
   protected content : string = '';
 
@@ -21,7 +21,8 @@ export class QuoteComponent implements OnInit, OnDestroy {
         if(response){
           const quote = response[0];
           this.title = quote.title.rendered;
-          this.content = quote.content.rendered.replace(/(<([^>]+)>)/gi, "");;
+          this.content = quote.content.rendered.replace(/(<([^>]+)>)/gi, "");
+          this.isLoading = false;
         }
       });
   }

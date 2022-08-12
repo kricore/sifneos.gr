@@ -16,7 +16,7 @@ export class PageComponent implements OnInit, OnDestroy {
     public apiSrv : ApiService
   ) { }
 
-  public isLoading : boolean = false;
+  public isLoading : boolean = true;
   protected title : string = '';
   protected content : string = '';
   protected image! : string | null;
@@ -45,6 +45,7 @@ export class PageComponent implements OnInit, OnDestroy {
           this.title = page.title.rendered;
           this.content = page.content.rendered;
           this.image = page._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null;
+          this.isLoading = false;
         }
       });
   }

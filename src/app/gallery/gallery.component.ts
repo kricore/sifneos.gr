@@ -28,19 +28,19 @@ export class GalleryComponent implements OnInit, OnDestroy {
   private closeSub!: Subscription;
   private nextSub!: Subscription;
   private previousSub!: Subscription;
-  public isloading : boolean = true;
+  public isLoading : boolean = true;
   private mediaSub!: Subscription;
 
   /**
    * Make the api call and construct the gallery
    */
   ngOnInit(): void {
-    this.isloading = true;
+    this.isLoading = true;
     this.apiSrv.getMedia();
     this.mediaSub = this.apiSrv
       .getMediaListener()
       .subscribe(response => {
-        this.isloading = false;
+        this.isLoading = false;
         this.images = response.media;
       });
   }
@@ -114,5 +114,4 @@ export class GalleryComponent implements OnInit, OnDestroy {
       }
     }
   }
-
 }

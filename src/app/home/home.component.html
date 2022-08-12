@@ -7,11 +7,12 @@
 
         <!-- LAYER NR. 1 -->
         <div class="font-white light-50-wide sm-mb-15 sm-mt-20">
+          <app-loader *ngIf="(this.isLoading)"></app-loader>
           <div [innerHTML]="content">
           </div>
         </div>
 
-        <div class="font-white sm-mt-20 mt-50">
+        <div *ngIf="(!this.isLoading)" class="font-white sm-mt-20 mt-50">
           <a routerLink="/bio" class="button medium gray">
             Περισσότερα
           </a>

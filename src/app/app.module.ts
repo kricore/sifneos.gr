@@ -19,6 +19,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
     PopupDirective,
     PopupComponent,
     PageComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
