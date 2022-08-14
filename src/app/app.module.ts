@@ -20,7 +20,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { LoaderComponent } from './shared/loader/loader.component';
+import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
 
+const cookieConfig:NgcCookieConsentConfig = {
+  cookie: {
+    domain: 'sifneos.gr' // or 'your.domain.com' 
+  },
+  palette: {
+    popup: {
+      background: '#000'
+    },
+    button: {
+      background: '#f1d600'
+    }
+  },
+  theme: 'edgeless',
+  type: 'opt-out'
+};
 
 @NgModule({
   declarations: [
@@ -45,6 +61,8 @@ import { LoaderComponent } from './shared/loader/loader.component';
     NgxGoogleAnalyticsModule.forRoot('MEASUREMENT-ID'),
     NgxGoogleAnalyticsRouterModule,
     ReactiveFormsModule,
+    NgcCookieConsentModule.forRoot(cookieConfig),
+
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

@@ -21,7 +21,7 @@
                     class="col-xs-12"
                     type="text"
                     formControlName="name"
-                    placeholder="Your Name"
+                    placeholder="Όνομα"
                   />
                   <span class="error" *ngIf="(form.get('name')?.value && form.get('name')?.invalid)">Ελάχιστοι χαρακτήρες: 3</span>
                 </div>
@@ -31,7 +31,7 @@
                     class="col-xs-12"
                     type="email"
                     formControlName="email"
-                    placeholder="Your Email"
+                    placeholder="Email"
                   />
                   <span class="error" *ngIf="(form.get('email')?.value && form.get('email')?.invalid)">Βάλτε ένα έγγυρο email</span>
                 </div>
