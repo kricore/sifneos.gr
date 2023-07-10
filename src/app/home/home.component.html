@@ -1,17 +1,17 @@
 <div id="index-link" class="sm-img-bg-fullscr parallax-section" style="background-image: url({{image}}); background-position: 50% 0px; background-color: #000;" data-stellar-background-ratio="0.5">
   <div class="container sm-content-cont js-height-fullscr" style="height: calc(100vh - 50px)">
     <div class="sm-cont-middle">
-
       <!-- OPACITY container -->
       <div class="opacity-scroll2 text-right">
 
         <!-- LAYER NR. 1 -->
         <div class="font-white light-50-wide sm-mb-15 sm-mt-20">
+          <app-loader *ngIf="(this.isLoading)"></app-loader>
           <div [innerHTML]="content">
           </div>
         </div>
 
-        <div class="font-white sm-mt-20 mt-50">
+        <div *ngIf="(!this.isLoading)" class="font-white sm-mt-20 mt-50">
           <a routerLink="/bio" class="button medium gray mr-20">
             Περισσότερα
           </a>
@@ -21,11 +21,8 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
-
 <app-quote></app-quote>
 <app-gallery></app-gallery>

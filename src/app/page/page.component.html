@@ -2,7 +2,8 @@
   <div class="relative container align-left">
     <div class="row">
       <div class="col-md-8">
-        <h1 class="page-title">{{title}}</h1>
+        <h1 class="page-title" *ngIf="(this.isLoading)">...</h1>
+        <h1 class="page-title" *ngIf="(!this.isLoading)">{{title}}</h1>
       </div>
 
       <div class="col-md-4">
@@ -17,8 +18,9 @@
 <div class="relative container align-left page-content">
   <div class="row">
     <div class=" mt-70 mb-70 col-md-8 main text">
-      <div [innerHTML]="content">
+      <div *ngIf="(!this.isLoading)" [innerHTML]="content">
       </div>
+      <app-loader *ngIf="(this.isLoading)"></app-loader>
     </div>
   </div>
 </div>

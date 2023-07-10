@@ -16,6 +16,5 @@ export class HomeComponent extends PageComponent implements OnInit {
     const { domain } = environment;
     return `${domain}/wp-json/wp/v2/pages/9?_embed`;
   }
-
-
+  
 }
