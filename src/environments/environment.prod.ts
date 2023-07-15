@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  domain: 'https://sifneos.gr/wp/'
+  domain: 'https://pavlossifneos.gr/wp/'
 };
