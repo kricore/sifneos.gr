@@ -70,7 +70,13 @@ export class PageComponent implements OnInit, OnDestroy {
    * Add or update basic meta-tags
    */
   addOrUpdateMeta(c: string): void {
-    const description = c.substring(0, 140);
+    // Function to strip HTML tags
+    const stripHtmlTags = (html: string): SafeHtml => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      return this.sanitizer.bypassSecurityTrustHtml(doc.body.textContent || '');
+    };
+
+    const description = stripHtmlTags(c).toString().substring(0, 140);
 
     if(this.meta.getTag('description')){
       this.meta.updateTag({ name: "description", content: description });
