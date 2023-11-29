@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, } from '@angular/core';
+import { Component, OnDestroy, OnInit, SecurityContext, } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -71,12 +71,13 @@ export class PageComponent implements OnInit, OnDestroy {
    */
   addOrUpdateMeta(c: string): void {
     // Function to strip HTML tags
-    const stripHtmlTags = (html: string): SafeHtml => {
+    const parseHtmlTags = (html: string): SafeHtml => {
       const doc = new DOMParser().parseFromString(html, 'text/html');
       return this.sanitizer.bypassSecurityTrustHtml(doc.body.textContent || '');
     };
-
-    const description = stripHtmlTags(c).toString().substring(0, 140);
+    const description = this.sanitizer
+      .sanitize(SecurityContext.HTML, parseHtmlTags(c))!
+      .substring(0, 160);
 
     if(this.meta.getTag('description')){
       this.meta.updateTag({ name: "description", content: description });
